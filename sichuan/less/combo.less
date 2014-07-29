@@ -1,0 +1,119 @@
+@import "variable";
+.wrap{
+	color: #666;
+	h2{
+		font-size: 26/24em;
+		height: 80/26em;
+		line-height: 80/26em;
+	}
+	li{
+		cursor: pointer;
+	}
+}
+#filterMod,#distFeeMod{
+	padding-left: 30/24em;
+}
+#filterMod{
+	
+	li{
+		position: relative;
+		i{
+			display: none;
+		}
+		&.active{
+			color: rgb(102, 102, 102);
+			i{
+				display: inline-block;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				width: 24/24em;
+				height: 25/25em;
+				background: url(img/v.png) no-repeat;
+				background-size: 24/24em 25/25em;
+			}
+		}
+	}
+	
+
+}
+#distTrigger{
+	i{
+		width: 12/24em;
+		height: 12/24em;
+		line-height: 24/24em;
+		background: url(img/solidTriangle.png) no-repeat;
+		background-size: 24/24em 8/24em;
+		vertical-align: middle;
+		&.active{
+			background-position: -13/24em 0;
+		}
+	}
+}
+.itemList{
+	margin-bottom: -30/24em;
+	li{
+		
+		width: 120/24em;
+		height: 54/24em;
+		line-height: 54/24em;
+		margin-bottom: 30/24em;
+		margin-right: 27/24em;
+		cursor: pointer;
+		
+
+	}
+}
+
+#comboTypeList{
+	
+	li{
+
+		display: inline-block;
+		position: relative;
+		&.active{
+			border: 1px solid @orange;
+		}
+		
+	}
+
+}
+#feeList{
+	li{
+		display: inline-block;
+	}
+}
+#distFeeMod>div,#distFeeMod>span{
+	display: inline-block;
+	cursor: pointer;
+}
+#distFeeMod{
+	margin-top:34/24em;
+	position: relative;
+	.boxShadow(0,2/24em,4/24em,rgba(4,0,0,.1));
+	>div{
+		padding-bottom: 15/24em;
+	}
+	ul{
+		display: none;
+		position: absolute;
+		top: 1.5em;
+		left: 0;
+		right: 0;
+		margin: 15/24em 0;
+		background: #f9f9f9;
+		z-index: 10;
+		.boxShadow(0,10/24em,20/24em,rgba(4,0,0,.48));
+		li{
+			display: inline-block;
+			margin:5/24em 12/24em;
+			padding: 9/24em 11/24em;
+			/* height: 64/24em;
+			line-height: 64/24em; */
+			&.active{
+				background: @orange;
+				border: 1px solid #ff5400;
+			}
+		}
+	}
+}

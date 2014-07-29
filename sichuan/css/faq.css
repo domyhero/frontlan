@@ -1,0 +1,50 @@
+.wrap i {
+  cursor: pointer;
+}
+#filterMod {
+  height: 2.5em;
+  line-height: 2.5em;
+  padding-left: 0.83333333em;
+  background: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(4, 0, 0, 0.1);
+}
+#filterMod li {
+  margin-right: 0.53571429em;
+  display: inline-block;
+  font-size: 1.16666667em;
+}
+#questionList {
+  margin: 0 0.83333333em;
+}
+#questionList li {
+  position: relative;
+  padding-right: 1.16666667em;
+  padding-bottom: 0.20833333em;
+  border-top: 2px solid #f1f1f1;
+}
+#questionList li h2 {
+  margin-top: 0.43333333em;
+  font-size: 1.25em;
+  line-height: 2.1;
+  font-weight: normal;
+  color: #333;
+}
+#questionList li p {
+  line-height: 1.45833333;
+  color: #555;
+}
+#questionList li:first-child {
+  border-top: none;
+}
+#questionList li:last-child {
+  border-bottom: 2px solid #f1f1f1;
+}
+#questionList li .rightArrow {
+  position: absolute;
+  right: -0.1em;
+  top: 45%;
+  width: 0.66666667em;
+  height: 1.25em;
+  background: url(img/rightArrow.png) no-repeat;
+  background-size: 0.66666667em 1.25em;
+}

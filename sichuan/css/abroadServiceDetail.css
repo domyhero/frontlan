@@ -1,0 +1,88 @@
+.wrap {
+  color: #555;
+}
+#tableMod table {
+  margin-top: 0.95833333em;
+  border-collapse: collapse;
+  color: #555;
+}
+#tableMod table th {
+  background-color: #fffbf3;
+  font-weight: normal;
+}
+#tableMod table .subTitle {
+  background-color: #f6f6f6;
+}
+#tableMod table td {
+  width: 39.16666667%;
+  height: 2.41666667em;
+  text-align: center;
+  border: 1px solid #d1d1d1;
+}
+#tableMod table td.short {
+  width: 10.3125%;
+  padding: 0 0.83333333em;
+}
+#youNumberMod {
+  padding: 1.28571429em 0;
+  background: #fffbf3;
+  font-size: 1.16666667em;
+  line-height: 1.75;
+  text-align: center;
+}
+#youNumberMod h2 {
+  color: #555;
+}
+#youNumberMod p {
+  color: #ff8400;
+}
+#nationInfo {
+  padding-top: 0.95833333em;
+  line-height: 1.66666667;
+}
+#nationInfo #tianqi {
+  margin: 0 0.25em 0 0.83333333em;
+  width: 1.91666667em;
+  height: 1.66666667em;
+  background: url(img/tianqi.png) no-repeat;
+  background-size: 1.91666667em 1.66666667em;
+  vertical-align: middle;
+}
+#nationInfo #star {
+  width: 6.33333333em;
+  display: block;
+}
+#feeMod {
+  margin-top: 0.75em;
+  overflow: hidden;
+}
+#feeMod h2 {
+  float: left;
+  font-size: 1.25em;
+  line-height: 1.46666667;
+  font-weight: normal;
+}
+#feeMod span {
+  width: 11.09090909em;
+  height: 2em;
+  line-height: 2em;
+  float: right;
+  font-size: 0.91666667em;
+  color: #fff;
+  background: #ff8400;
+  border-radius: 0.375em;
+  text-align: center;
+  cursor: pointer;
+}
+#callTable td {
+  width: 10.41666667em;
+  height: 2.41666667em;
+}
+#sendMessageMod .twoCol {
+  width: 47.65625%;
+  padding: 0 0.33333333em;
+}
+#feeTip {
+  margin: 0.70833333em 0;
+  line-height: 2;
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		h1,h2{
+			height:100px;
+			background: red;
+			}
+			body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;} @media (max-device-width: 780px){#golist{display: block!important;}}#golist {display: none;}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=qCut1sNZSKTP8RoOhzEATMul&v=1.0"></script>
+</head>
+<body>
+	<div id="l-map"></div>
+	<div id="allmap"></div>
+	<div id="log"></div>
+	<h1>werwerwerwerwerwer</h1>
+	
+	<script src="js/jQuery.js"></script>
+	<script>
+var map = new BMap.Map("l-map");    
+map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);    
+var options = {    
+      onSearchComplete: function(results){    
+          if (local.getStatus() == BMAP_STATUS_SUCCESS){    
+                // 判断状态是否正确    
+                var s = [];    
+                for (var i = 0; i < results.getCurrentNumPois(); i ++){
+                debugger;    
+                    s.push(results.getPoi(i).title + ", " + results.getPoi(i).address);    
+                }    
+             document.getElementById("log").innerHTML = s.join("<br>");    
+          }    
+      }    
+ };    
+var local = new BMap.LocalSearch(map, options);    
+local.search("公园"); 
+            
+
+	</script>
+</body>
+</html>

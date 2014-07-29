@@ -1,0 +1,40 @@
+@import "variable";
+.wrap{
+	color: #555;
+	h2{
+		line-height: 2;
+		color: @orange;
+	}
+	h2+p{
+		line-height: 2;
+	}
+}
+#content{
+	padding: 28/24em 20/24em 0;
+}
+.comboMod{
+	margin-bottom: 25/24em;
+
+}
+#loadingMore{
+	margin-top: 25/24em;
+	margin-bottom: 25/24em;
+	&+div{
+		display: none;
+		margin: 0 -20/24em;
+		padding: 0 20/24em 53/24em;
+		background: #fffbf3;
+	}
+}
+table{
+
+	background: #fff;
+	color: #555;
+	th{
+		font-weight: normal;
+		background: #fffbf3;
+	}
+	.twoCol{
+		width: 302/600*100%;
+	}
+}

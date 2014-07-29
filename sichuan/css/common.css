@@ -1,0 +1,414 @@
+@charset "utf-8";
+/*
+ reset default css 	
+*/
+body,
+ul,
+ol,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+form,
+fieldset,
+legend,
+input,
+textarea,
+button,
+p,
+blockquote,
+th,
+td,
+pre,
+menu {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: '\5fae\8f6f\96c5\9ed1';
+}
+li {
+  list-style: none outside none;
+}
+a:link,
+a:hover {
+  text-decoration: none;
+}
+a img {
+  border: 0;
+  vertical-align: bottom;
+}
+button {
+  background-color: transparent;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+fieldset {
+  border: none;
+}
+legend {
+  display: none;
+}
+body {
+  font-family: "宋体", Helvetica, STHeiTi, sans-serif;
+  font-size: 24px;
+}
+li {
+  list-style: none;
+}
+/* 响应式开发 start */
+.wrap,
+input {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+}
+input,
+h1,
+h2,
+h3,
+h4,
+table {
+  font-size: 24px;
+}
+i {
+  display: inline-block;
+}
+@media (min-width: 320px) and (max-width: 360px) {
+  .wrap,
+  body,
+  input,
+  h1,
+  h2,
+  h3,
+  h4,
+  select,
+  button,
+  .item,
+  #tip,
+  table {
+    font-size: 12px;
+  }
+  .dialog .dialog-close {
+    font-size: 15px;
+  }
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  .wrap,
+  body,
+  input,
+  h1,
+  h2,
+  h3,
+  h4,
+  select,
+  table .item,
+  #tip {
+    font-size: 13.44px;
+  }
+}
+@media (min-width: 480px) and (max-width: 640px) {
+  .wrap,
+  body,
+  input,
+  h1,
+  h2,
+  h3,
+  h4,
+  select,
+  table .item,
+  #tip {
+    font-size: 18px;
+  }
+}
+.hide {
+  display: none;
+}
+.itemList li {
+  display: inline-block;
+  cursor: pointer;
+}
+.wrap i {
+  cursor: pointer;
+}
+table {
+  border-collapse: collapse;
+}
+table th,
+table td {
+  border: 1px solid #d1d1d1;
+}
+#loadingTip {
+  display: none;
+  position: absolute;
+  width: 80%;
+  height: 4.16666667em;
+  line-height: 4.16666667em;
+  z-index: 10;
+  top: 40%;
+  left: 50%;
+  margin-left: -40%;
+  margin-top: -4.16666667em;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  background: #f9f9f9;
+  text-align: center;
+  -moz-box-shadow: 0px 2px 4px rgba(4, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 2px 4px rgba(4, 0, 0, 0.1);
+  box-shadow: 0px 2px 4px rgba(4, 0, 0, 0.1);
+}
+.inputSearch {
+  width: 17.5em;
+  height: 2em;
+  margin-left: 1.04166667em;
+  padding: 0.29166667em 0.29166667em 0.29166667em 1.875em;
+  box-sizing: border-box;
+  border: 2px solid #dedede;
+  background: url(img/inputSearch.png) no-repeat;
+  background-size: 1.20833333em 1.20833333em;
+  background-position: 0.29166667em center;
+}
+.inputSearch:focus {
+  background: none;
+  padding-left: 0.20833333em;
+  border: 2px solid #ff8400;
+  outline: none;
+}
+/* 响应式开发 start */
+.wrap,
+input {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+}
+input,
+h1,
+h2,
+h3,
+h4 {
+  font-size: 24px;
+}
+i {
+  display: inline-block;
+}
+.itemList li {
+  background: #f1f1f1;
+  border: 1px solid #ccc;
+  font-size: 0.91666667em;
+  text-align: center;
+}
+.itemList li.active {
+  color: #fff;
+}
+#commonHeader {
+  padding: 1.16666667em 0 0;
+}
+#commonHeader i {
+  background: url(img/newActivityHeader.png) no-repeat;
+  background-size: 6.66666667em 1.66666667em;
+  height: 1.66666667em;
+  vertical-align: middle;
+}
+#commonHeader i.left {
+  width: 1.66666667em;
+  margin-left: 1.25em;
+}
+#commonHeader i.right {
+  width: 1.58333333em;
+  background-position: -3.33333333em 0;
+}
+#commonHeader input {
+  margin: 0 1.04166667em 0 1.25em;
+}
+#commonHeader menu {
+  margin-top: 0.83333333em;
+  height: 2.91666667em;
+  line-height: 2.91666667em;
+  background: #ff8400;
+  color: #fff;
+  cursor: pointer;
+}
+#commonHeader menu a {
+  position: relative;
+  display: inline-block;
+  width: 14.70588235%;
+  font-size: 1.25em;
+  text-align: center;
+  color: #ffc280;
+}
+#commonHeader menu a:active {
+  color: #fff;
+}
+#commonHeader menu a:active i {
+  display: inline-block;
+  width: 0.16666667em;
+  height: 0.16666667em;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  bottom: 0.16666667em;
+  -webkit-box-shadow: 0 0 0.16666667em #ffffff;
+  box-shadow: 0 0 0.16666667em rgba(255, 255, 255, 0.75);
+  border-radius: 50%;
+}
+.modal-header .close {
+  float: right;
+  background: transparent;
+}
+#shareMod a {
+  cursor: pointer;
+}
+@media (min-width: 320px) and (max-width: 360px) {
+  .wrap,
+  body,
+  input,
+  h1,
+  h2,
+  h3,
+  h4,
+  select,
+  button,
+  .item,
+  #tip {
+    font-size: 12px;
+  }
+  .dialog .dialog-close {
+    font-size: 15px;
+  }
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  .wrap,
+  body,
+  input,
+  h1,
+  h2,
+  h3,
+  h4,
+  select,
+  .item,
+  #tip {
+    font-size: 13.44px;
+  }
+}
+@media (min-width: 480px) and (max-width: 640px) {
+  .wrap,
+  body,
+  input,
+  h1,
+  h2,
+  h3,
+  h4,
+  select,
+  .item,
+  #tip {
+    font-size: 18px;
+  }
+}
+.orange {
+  background: #ff8400;
+  color: #fff;
+}
+/* 套餐 */
+#comboList {
+  padding: 0.83333333em;
+}
+#comboList > li,
+.comboMod {
+  overflow: hidden;
+  margin-top: 1.41666667em;
+}
+#comboList > li:first-child,
+.comboMod:first-child {
+  margin-top: 0;
+}
+#comboList > li img,
+.comboMod img {
+  float: left;
+  width: 8em;
+  height: 6.08333333em;
+  vertical-align: middle;
+}
+#comboList > li ul,
+.comboMod ul {
+  margin-left: 8.75em;
+}
+#comboList > li ul li,
+.comboMod ul li {
+  color: #444;
+}
+#comboList > li ul li span,
+.comboMod ul li span {
+  color: #999;
+}
+#comboList > li ul li:first-child,
+.comboMod ul li:first-child {
+  position: relative;
+}
+#comboList > li ul li:first-child button,
+.comboMod ul li:first-child button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3em;
+  height: 1.5em;
+  background: #ff8400;
+  color: #fff;
+  border: none;
+  border-radius: 0.33333333em;
+}
+#comboList > li ul .feeMod,
+.comboMod ul .feeMod {
+  color: #ff6600;
+}
+#comboList > li ul h3,
+.comboMod ul h3 {
+  width: 12.91666667em;
+  height: 1.58333333em;
+  overflow: hidden;
+  font-size: 1.25em;
+  color: #333;
+}
+#loadingMore {
+  text-align: center;
+  cursor: pointer;
+}
+#loadingMore i {
+  width: 0.66666667em;
+  height: 0.75em;
+  margin-right: 0.29166667em;
+  background: url(img/loadingMore.png) no-repeat;
+  background-size: 1.41666667em 0.75em;
+}
+table th,
+table td {
+  width: 39.16666667%;
+  height: 2.41666667em;
+  text-align: center;
+}
+table th.short,
+table td.short {
+  width: 10.3125%;
+  padding: 0 0.83333333em;
+}
+table .twoCol {
+  width: 47.65625%;
+  padding: 0 0.33333333em;
+}
+.doubleArrow {
+  width: 0.57142857em;
+  height: 0.57142857em;
+  margin: 0 0.46428571em 0.28571429em;
+  background: url(img/doubleArrow.png) no-repeat;
+  background-size: 1.14285714em 0.57142857em;
+  vertical-align: middle;
+}
+.doubleArrow.down {
+  background-position: -0.60714286em 0;
+}

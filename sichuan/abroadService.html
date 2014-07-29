@@ -1,0 +1,107 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/abroadService.css">
+
+<title>出国服务</title>
+</head>
+<body>
+	<div class="wrap">
+		<!--#include file="common/header.html" -->
+		<header id="nationMap">
+
+			<div id="americaIcon" title="美洲" class="positionIcon america">
+				<i data-name="america"></i><span>美洲</span>
+			</div>
+			<div id="africaIcon" title="非洲" class="positionIcon">
+				<i data-name="africa"></i><span>非洲</span>
+			</div>
+			<div id="oceaniaIcon" title="大洋洲" class="positionIcon">
+				<i data-name="oceania"></i><span>大洋洲</span>
+			</div>
+			<div id="europeIcon" title="欧洲" class="positionIcon">
+				<i data-name="europe" ></i><span>欧洲</span>
+			</div>
+			<div id="asiaIcon" title="亚洲" class="positionIcon asia">
+				<i data-name="asia"></i><span>亚洲</span>
+			</div>
+		</header>
+		<div>
+			<div id="continentList">
+				<span class="active">热门</span>
+				<span class="asia">亚洲</span>
+				<span class="europe">欧洲</span>
+				<span class="africa">非洲</span>
+				<span class="america">美洲</span>
+				<span class="oceania">大洋洲</span>
+			</div>
+			<div></div>
+			
+			
+		</div>
+		<div id="content-mod">
+			<ol id="nationSelectList" class="itemList">
+				<!-- <li class="active">美国</li>
+				<li>韩国</li>
+				<li>日本</li> -->
+			</ol>
+			<div id="cardSelectMod">
+			<section id="aboutCard">
+				<h3>确认您的卡</h3>
+				<span id="howValidateCard">如何判断我的卡？</span>
+			</section>
+			
+			<ol id="confirmCardlist" class="itemList">
+				<li class="active">新天翼国际卡</li>
+				<li>旧天翼国际卡</li>
+				<li>普通卡 </li>
+			</ol>
+			<h3>您有两种漫游方式：</h3>
+			<ol id="roamList" class="itemList">
+				<li class="active">GSM网络（CtoG)</li>
+				<li>CtoC</li>
+			</ol>
+		</div>
+		</div>
+		
+		<footer>
+			<button id="searchAbroadCard" class="orange">查询</button>
+		</footer>
+		<!-- modal start -->
+		<div id="validateCardModal" class="modal fade hide">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		        <h4 class="modal-title">&nbsp;</h4>
+		      </div>
+		      <div class="modal-body">
+		      	<header>
+		      		<img id="validateCardImg" src="css/img/validateCardImg.jpg" />
+		      	</header>
+		        <ul>
+		        	<li>1.卡片样式判断：你可以通过网厅、手机APP或
+者到附近的网厅进行办理，不过优惠力度不一样。</li>
+		        	<li>2.卡片样式判断：你可以通过网厅、手机APP或
+者到附近的网厅进行办理，不过优惠力度不一样。</li>
+		        	<li>3.卡片样式判断：你可以通过网厅、手机APP。</li>
+		        </ul>
+		      </div>
+		      
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		<script id="nationTmpl" type="text/html">
+			<li>${$data}</li>
+		</script>
+	</div>
+	<script src="js/jQuery.js"></script>
+	<script src="js/jQuery.tmpl.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="json/nationData.json"></script>
+	<script src="js/abroadService.js"></script>
+</body>
+</html>

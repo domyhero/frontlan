@@ -1,0 +1,191 @@
+@import "variable";
+.wrap{
+	position: static;
+	i{
+		cursor: pointer;
+	}
+	h3{
+		height: 62/24em;
+		line-height: 62/24em;
+	}
+	footer{
+		button{
+			
+		}
+	}
+	.itemList{
+		li{
+			margin-bottom: 30/24em;
+			&.active{
+				background: @orange;
+				border-color: #ff5400;
+			}
+		}
+	}
+}
+
+#confirmCardlist,#roamList{
+	li{
+		font-size: 22/24em;
+		height: 54/22em;
+		line-height: 54/22em;
+		/*margin-top: 13/24em;*/
+		padding: 0 26/22em;
+		&:first-child{
+			margin-left: 0;
+		}
+	}
+}
+#confirmCardlist{
+	li{
+		margin-right: 24/22em;
+
+	}
+}
+#content-mod{
+	padding: 0 14/24em;
+}
+#roamList{
+	li{
+		margin-left: 39/22em;
+		padding: 0 36/22em;
+	}
+}
+#aboutCard{
+	overflow: hidden;
+	span{
+		height: 62/24em;
+		line-height: 62/24em;
+	}
+	h3{
+		float: left;
+	}
+	span{
+		display: inline-block;
+		float: right;
+		color: #888;
+	}
+}
+#nationMap{
+	position: relative;
+	width: 100%;
+	height: 288/24em;
+	background: url(img/nationMap.jpg);
+	background-size: 100% 288/24em;
+	.positionIcon{
+		position: absolute;
+		cursor: pointer;
+		i{
+			width: 33/24em;
+			height: 38/24em;
+			background: url(img/positionIcon.png) no-repeat;
+			background-size: 33/24em 38/24em;
+		}
+		span{
+			position: absolute;
+			display: none;
+			width: 97/24em;
+			height: 44/24em;
+			top: 16/24em;
+			left: 1.5em;
+			line-height: 44/24em;
+			background: #ff8400;
+			text-align: center;
+			color: #fff;
+		}
+
+	}
+	#americaIcon{
+		left:136/24em;
+		top:47/24em;
+		
+	}
+	#africaIcon{
+		left: 324/24em;
+		top: 160/24em;
+	}
+	#oceaniaIcon{
+		left: 519/24em;
+		top: 209/24em;
+		span{
+			left: auto;
+			right: 40/24em;
+		}
+	}
+	#europeIcon{
+		left: 318/24em;
+		top: 68/24em;
+	}
+	#asiaIcon{
+		left: 413/24em;
+		top:113/24em;
+
+	}
+
+}
+#continentList{
+	height: 52/24em;
+	line-height: 52/24em;
+	border-bottom: 1px solid #f5f5f5;
+
+	span{
+		display: inline-block;
+		margin-left: 43/24em;
+		padding: 0 1px;
+		color: #888;
+		cursor: pointer;
+		&:first-child{
+			margin-left: 25/24em;
+		}
+		&.active{
+			border-bottom: 4/24em solid @orange;
+		}
+	}
+}
+#nationSelectList{
+	margin-right: -14/24em;
+	padding-top: 24/24em;
+	li{
+		// width: 97/24em;
+
+		height: 44/24em;
+
+		line-height: 44/24em;
+		margin-right: 14/24em;
+		margin-bottom: 30/24em;
+		padding:0 25/24em;
+		text-align: center;
+
+	}
+}
+.wrap>footer{
+	width: 606/640*100%;
+	margin: 2.5/24em auto 30/24em;
+}
+#searchAbroadCard{
+	font-size: 36/24em;
+	width: 100%;
+	height: 74/36em;
+	border: 1px solid #ff8400;
+	border-radius: 9/36em;
+	cursor: pointer;
+}
+#howValidateCard{
+	cursor: pointer;
+}
+#validateCardImg{
+	width: 183/24em;
+	height: 119/24em;
+}
+#validateCardModal{
+	.modal-body{
+		color: #555;
+		header{
+			text-align: center;
+		}
+		ul{
+			margin-top: 16/24em;
+			line-height: 35/24;
+		}
+	}
+}

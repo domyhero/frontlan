@@ -1,0 +1,261 @@
+@import "base";
+@import "common";
+@import "module";
+@import "variable";
+.inputSearch{
+  width: 420/24em;
+  height: 48/24em;
+  margin-left: 25/24em;
+  padding: 7/24em 7/24em 7/24em 45/24em ;
+  box-sizing:border-box;
+  border: 2px solid #dedede;
+  background: url(img/inputSearch.png) no-repeat;
+  background-size: 29/24em 29/24em;
+  background-position: 7/24em center;
+  &:focus{
+    background: none;
+    padding-left: 5/24em;
+    border: 2px solid @orange;
+    outline:none;
+
+  }
+
+}
+/* 响应式开发 start */
+.wrap,input{
+  
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  
+}
+
+input,h1,h2,h3,h4{
+  font-size:24px;
+}
+
+i{
+  display: inline-block;
+}
+.itemList{
+  li{
+    background:#f1f1f1;
+    border:1px solid #ccc;
+    font-size: 22/24em;
+    text-align: center;
+    &.active{
+      color: #fff;
+    }
+  }
+
+}
+#commonHeader{
+  padding: 28/24em 0  0;
+  i{
+    background: url(img/newActivityHeader.png) no-repeat;
+    background-size: 160/24em 40/24em;
+    height: 40/24em;
+    vertical-align: middle;
+    &.left{
+      width: 40/24em;
+      margin-left: 30/24em;
+    }&.right{
+      
+      width: 38/24em;
+      background-position: -80/24em 0;
+    }
+
+  }
+  input{
+    margin: 0 25/24em 0 30/24em;
+  }
+  menu{
+    margin-top: 20/24em;
+    height: 70/24em;
+    line-height: 70/24em;
+    background: #ff8400;
+    color: #fff;
+    cursor: pointer;
+    a{
+      position: relative;
+      display: inline-block;
+      width: 100/6.8%;
+      font-size: 30/24em;
+      text-align: center;
+     
+      color: #ffc280;
+
+      &:active{
+        color: #fff;
+        i{
+          display: inline-block;
+          width: 4/24em;
+          height: 4/24em;
+          background: #fff;
+          position: absolute;
+          left: 50%;
+          bottom: 4/24em;
+          -webkit-box-shadow: 0 0 4/24em #fff;
+          box-shadow: 0 0 4/24em rgba(255, 255, 255,.75);
+          border-radius: 50%;
+        }
+       
+      }
+      
+    }
+  }
+}
+.modal-header .close{
+  float: right;
+  background: transparent;
+}
+#shareMod a{
+  cursor: pointer;
+}
+@media (min-width: 320px) and (max-width: 360px) {
+  .wrap,
+  body,
+  input,
+  h1,
+  h2,
+  h3,
+  h4,
+  select,
+  button,
+  .item,
+  #tip {
+    font-size: 12px;
+  }
+  .dialog .dialog-close {
+    font-size: 15px;
+  }
+}
+@media (min-width: 360px) and (max-width: 480px) {
+  .wrap,
+  body,
+  input,
+  h1,
+  h2,
+  h3,
+  h4,
+  select,
+  .item,
+  #tip {
+    font-size: 13.44px;
+  }
+}
+@media (min-width: 480px) and (max-width: 640px) {
+  .wrap,
+  body,
+  input,
+  h1,
+  h2,
+  h3,
+  h4,
+  select,
+  .item,
+  #tip {
+    font-size: 18px;
+  }
+}
+.orange{
+  background: #ff8400;
+  color: #fff;
+}
+/* 套餐 */
+#comboList{
+   padding: 20/24em;
+}
+#comboList>li,.comboMod{
+  overflow: hidden;
+  margin-top: 34/24em;
+  &:first-child{
+    margin-top: 0;
+  }
+  img{
+    float: left;
+    width: 192/24em;
+    height: 146/24em;
+    vertical-align: middle;
+  }
+  ul{
+    margin-left: 210/24em;
+    li{
+      
+      color: #444;
+      span{
+        color: #999;
+      }
+      &:first-child{
+        position: relative;
+        button{
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 72/24em;
+          height: 36/24em;
+          background: @orange;
+          color: #fff;
+          border: none;
+          border-radius: 8/24em;
+        }
+      }
+
+
+    }
+    .feeMod{
+      color: #ff6600;
+    }
+    h3{
+      width: 310/24em;
+      height: 38/24em;
+      overflow: hidden;
+     
+      font-size: 30/24em;
+      color: #333;
+    }
+  }
+}
+
+#loadingMore{
+  text-align: center;
+  cursor: pointer;
+  i{
+    width: 16/24em;
+    height: 18/24em;
+    margin-right: 7/24em;
+    background: url(img/loadingMore.png) no-repeat;
+    background-size: 34/24em 18/24em;
+  }
+}
+
+table{
+  th,td{
+    width: 39.16666667%;
+    height: 2.41666667em;
+    text-align: center;
+      &.short{
+        width: 66/640*100%;
+        padding: 0 20/24em;
+      }
+      
+  }
+  .twoCol{
+      width: 305/640*100%;
+      padding: 0 8/24em;
+    }
+
+}
+
+.doubleArrow{
+  width: 16/28em;
+  height: 16/28em;
+
+  margin: 0 13/28em 8/28em;
+  background: url(img/doubleArrow.png) no-repeat;
+  background-size: 32/28em 16/28em;
+  vertical-align: middle;
+  &.down{
+    background-position: -17/28em 0;
+  }
+}

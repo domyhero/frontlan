@@ -1,0 +1,64 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/common.css">
+
+<link rel="stylesheet" href="css/newActivity.css">
+
+<title>营业厅</title>
+</head>
+<body>
+	<div class="wrap">
+		<!--#include file="common/header.html" -->
+
+		<div id="newActivityList">
+			<section class="shareObj">
+				<header>
+					<h2>约会春天无线宽带自由行 </h2>
+					<div class="share"><i></i><span>分享</span></div>
+				</header>
+				<a href="newActivityDetail.html"><img src="images/activity1.jpg" /></a>
+			</section>
+
+			<section class="shareObj">
+				<header>
+					<h2>易信让沟通更有趣</h2>
+					<div class="share"><i></i>分享</div>
+				</header>
+				<a href="newActivityDetail.html"><img src="images/activity2.jpg" /></a>
+			</section>
+			
+			<!-- modal start -->
+			<div id="shareModal" class="modal fade">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			        <h4 class="modal-title">分享</h4>
+			      </div>
+			      <div class="modal-body">
+			        <div id="shareMod">
+			          <a id="tencentShare" class="shareTrigger">分享至腾讯微博</a>  
+			          <a id="sinaShare" class="shareTrigger">分享至新浪微博</a>
+			        </div>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			       <!--  <button type="button" class="btn btn-primary">Save changes</button> -->
+			      </div>
+			    </div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+			<!-- end -->
+		</div>
+
+		<script src="js/jQuery.js"></script>
+		<script src="js/jQuery.tmpl.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/newActivity.js"></script>
+	</div>
+</body>
+</html>

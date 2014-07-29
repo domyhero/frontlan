@@ -1,0 +1,18 @@
+.wrap {
+  color: #555;
+}
+#networkAd {
+  width: 100%;
+  height: auto;
+  margin: 1.5em 0 1.41666667em;
+}
+#connectMod h2 {
+  font-size: 1.125em;
+  color: #ff8400;
+  border-left: 0.25em solid #ff8400;
+  margin: 0.92592593em 0 0.55555556em;
+  padding-left: 0.37037037em;
+}
+#connectMod ul li {
+  line-height: 2;
+}

@@ -1,0 +1,147 @@
+.wrap{
+	min-height: 100%;
+	>header{
+		
+		padding:28/24em 0 22/24em 35/24em;
+		border-bottom: 1px solid #ff8400;
+		i{
+			vertical-align: middle;
+		}
+		input{
+			width: 100%;
+			margin-left: 0;
+			box-sizing:border-box;
+		}
+	}
+}
+#search-wrap{
+	
+	.quick{
+		background: #dbdbdb;
+		color: blue;
+	}
+	#search-mod{
+		width: 420/24em;
+		position: relative;
+		display: inline-block;
+		margin: 0 30/24em 0 42/24em;
+	}
+	ul{
+		display: none;
+		width: 99.5%;
+		position: absolute;
+		top: 48/24em;
+		z-index: 10;
+		background: #fff;
+		border: 1px solid #dbdbdb;
+		border-top: none;
+		color: #444;
+		cursor: pointer;
+
+		li{
+			height: 48/24em;
+			line-height: 48/24em;
+			box-sizing:border-box;
+			padding-left: 30/24em;
+			border-top: 1px solid #dbdbdb;
+			&:first-child{
+				border-top: none;
+			}
+		}
+	}
+	
+}
+#hallList{
+	width: 600/640*100%;
+	margin: 20/24em auto 0;
+	color: #737373;
+	li{
+		margin-bottom: 30/24em;
+		padding: 27/24em 20/24em 0;
+		border-radius: 10/24em;
+
+		border:1px solid #d0d0d0;
+		h3{
+			font-size: 30/24em;
+		}
+		p{
+			font-size: 24/24em;
+		}
+		>footer{
+			margin-top: 25/24em;
+			padding: 20/24em 0;
+			border-top: 1px solid #d0d0d0;
+			span{
+				display: inline-block;
+				width: 45%;
+
+				text-align: center;
+			}
+			.goTo i,.call i{
+				height: 30/24em;
+				margin-right: 15/24em;
+				background: url(img/goToCall.png);
+				background-size: 108/24em 30/24em;
+				background-repeat: no-repeat;
+				vertical-align: top;
+			}
+			.goTo{
+				border-right: 1px solid #e8e8e8;
+				i{
+					width: 24/24em;
+				}
+			}
+			
+			.call i{
+				width: 30/24em;
+				background-position: -48/24em 0;
+				
+			}
+		}
+	}
+}
+
+h1{
+	height: 300/24em;
+	background: red;
+}
+#search-wrap a{
+	display: inline-block;
+	width: 18/24em;
+}
+#arrowLeft{
+	width: 18/24em;
+	height: 30/24em;
+	background: url(img/arrowLeft.png);
+	background-size: 36/24em 30/24em;
+
+}
+
+#map{
+	width: 48/24em;
+	height: 40/24em;
+	background: url(img/map.png);
+	background-size: 96/24em 40/24em;
+	cursor: pointer;
+	&.active{
+		background-position: -48/24em 40/24em;
+	}
+}
+
+#notGeolaction{
+	display: none;
+	width: 80%;
+	margin: 0 auto;
+	padding: 44/24em 0 44/24em 0;
+	background: url(img/notGeolocationTip.png) no-repeat #f2f2f2;
+	background-size: 46/24em 48/24em; 
+	background-position: 12/24em 11/24em;
+	border-radius: 10/24em;
+	border: 1px solid #ccc;
+	text-align: center;
+	p{
+		padding-left: 1.5em;
+		font-size: 15/24em;
+	}
+
+}

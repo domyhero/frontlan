@@ -1,0 +1,37 @@
+.wrap {
+  color: #555;
+}
+.wrap h2 {
+  line-height: 2;
+  color: #ff8400;
+}
+.wrap h2 + p {
+  line-height: 2;
+}
+#content {
+  padding: 1.16666667em 0.83333333em 0;
+}
+.comboMod {
+  margin-bottom: 1.04166667em;
+}
+#loadingMore {
+  margin-top: 1.04166667em;
+  margin-bottom: 1.04166667em;
+}
+#loadingMore + div {
+  display: none;
+  margin: 0 -0.83333333em;
+  padding: 0 0.83333333em 2.20833333em;
+  background: #fffbf3;
+}
+table {
+  background: #fff;
+  color: #555;
+}
+table th {
+  font-weight: normal;
+  background: #fffbf3;
+}
+table .twoCol {
+  width: 50.33333333%;
+}

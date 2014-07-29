@@ -1,0 +1,79 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/combo.css">
+
+<title>套餐</title>
+</head>
+<body>
+	<div class="wrap">
+		<!--#include file="common/header.html" -->
+		<div id="filterMod">
+			<h2>套餐:</h2>
+			<ul id="comboTypeList" class="itemList">
+				<li class="network active">宽带<i></i></li><li class="phone">手机<i></i></li><li class="itv">ITV<i></i></li><li class="tel">固话<i></i></li>
+			</ul>
+			<h2 >资费：(元)</h2>
+			<ul id="feeList" class="itemList">
+				
+			</ul> 
+			</div>
+			<div id="distFeeMod">
+				<div>
+					<span id="distTrigger">地区<i class="doubleArrow"></i></span>
+					<ul id="distList">
+						<li>全省</li>
+						<li class="active">成都市</li>
+						<li>自贡市</li>
+						<li>攀枝花市</li>
+						<li>泸州市</li>
+						<li>全省</li>
+						<li>成都市</li>
+					</ul>
+				</div>
+				
+				<span id="feeTrigger">资费<i class="doubleArrow"></i></span>
+			</div>
+		
+		
+		<ul id="comboList"> 
+			<li>
+				<img src="images/comboProduct.jpg" />
+				<ul>
+					<li><h3>“卓越宽带”合约计划</h3><button >办理</button></li>
+					<li><span>说明：</span>新增50M、100M宽带单产品</li>
+					<li class="feeMod"><span>资费：</span>168元/月 1480包年</li>
+					<li><span>优惠：</span>中兴T2369手机可选，靓号</li>
+				</ul>
+			</li>
+			<li>
+				<img src="images/comboProduct.jpg" />
+				<ul>
+					<li><h3>“卓越宽带”合约计划</h3><button>办理</button></li>
+					<li><span>说明：</span>新增50M、100M宽带单产品</li>
+					<li class="feeMod"><span>资费：</span>168元/月 1480包年</li>
+					<li><span>优惠：</span>中兴T2369手机可选，靓号</li>
+				</ul>
+			</li>
+			<li>
+				<img src="images/comboProduct.jpg" />
+				<ul>
+					<li><h3>“卓越宽带”合约计划</h3><button>办理</button></li>
+					<li><span>说明：</span>新增50M、100M宽带单产品</li>
+					<li class="feeMod"><span>资费：</span>168元/月 1480包年</li>
+					<li><span>优惠：</span>中兴T2369手机可选，靓号</li>
+				</ul>
+			</li>
+		</ul>
+		<script id="feeTmpl" type="text/html">
+			<li>${$data}<i></i></li>
+		</script>
+	</div>
+	<script src="js/jQuery.js"></script>
+	<script src="js/jQuery.tmpl.js"></script>
+	<script src="js/combo.js"></script>
+</body>
+</html>

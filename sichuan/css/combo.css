@@ -1,0 +1,109 @@
+.wrap {
+  color: #666;
+}
+.wrap h2 {
+  font-size: 1.08333333em;
+  height: 3.07692308em;
+  line-height: 3.07692308em;
+}
+.wrap li {
+  cursor: pointer;
+}
+#filterMod,
+#distFeeMod {
+  padding-left: 1.25em;
+}
+#filterMod li {
+  position: relative;
+}
+#filterMod li i {
+  display: none;
+}
+#filterMod li.active {
+  color: #666666;
+}
+#filterMod li.active i {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 1em;
+  height: 1em;
+  background: url(img/v.png) no-repeat;
+  background-size: 1em 1em;
+}
+#distTrigger i {
+  width: 0.5em;
+  height: 0.5em;
+  line-height: 1em;
+  background: url(img/solidTriangle.png) no-repeat;
+  background-size: 1em 0.33333333em;
+  vertical-align: middle;
+}
+#distTrigger i.active {
+  background-position: -0.54166667em 0;
+}
+.itemList {
+  margin-bottom: -1.25em;
+}
+.itemList li {
+  width: 5em;
+  height: 2.25em;
+  line-height: 2.25em;
+  margin-bottom: 1.25em;
+  margin-right: 1.125em;
+  cursor: pointer;
+}
+#comboTypeList li {
+  display: inline-block;
+  position: relative;
+}
+#comboTypeList li.active {
+  border: 1px solid #ff8400;
+}
+#feeList li {
+  display: inline-block;
+}
+#distFeeMod > div,
+#distFeeMod > span {
+  display: inline-block;
+  cursor: pointer;
+}
+#distFeeMod {
+  margin-top: 1.41666667em;
+  position: relative;
+  -webkit-box-shadow: 0 0.08333333em 0.16666667em rgba(4, 0, 0, 0.1);
+  -moz-box-shadow: 0 0.08333333em 0.16666667em rgba(4, 0, 0, 0.1);
+  -o-box-shadow: 0 0.08333333em 0.16666667em rgba(4, 0, 0, 0.1);
+  -ms-box-shadow: 0 0.08333333em 0.16666667em rgba(4, 0, 0, 0.1);
+  box-shadow: 0 0.08333333em 0.16666667em rgba(4, 0, 0, 0.1);
+}
+#distFeeMod > div {
+  padding-bottom: 0.625em;
+}
+#distFeeMod ul {
+  display: none;
+  position: absolute;
+  top: 1.5em;
+  left: 0;
+  right: 0;
+  margin: 0.625em 0;
+  background: #f9f9f9;
+  z-index: 10;
+  -webkit-box-shadow: 0 0.41666667em 0.83333333em rgba(4, 0, 0, 0.48);
+  -moz-box-shadow: 0 0.41666667em 0.83333333em rgba(4, 0, 0, 0.48);
+  -o-box-shadow: 0 0.41666667em 0.83333333em rgba(4, 0, 0, 0.48);
+  -ms-box-shadow: 0 0.41666667em 0.83333333em rgba(4, 0, 0, 0.48);
+  box-shadow: 0 0.41666667em 0.83333333em rgba(4, 0, 0, 0.48);
+}
+#distFeeMod ul li {
+  display: inline-block;
+  margin: 0.20833333em 0.5em;
+  padding: 0.375em 0.45833333em;
+  /* height: 64/24em;
+			line-height: 64/24em; */
+}
+#distFeeMod ul li.active {
+  background: #ff8400;
+  border: 1px solid #ff5400;
+}
