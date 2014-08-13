@@ -1,9 +1,12 @@
 (function(){
+	var self = null;
 	var $mainList = $("#mainList");
 	var $moreContent = $("#moreContent");
 	var $mySwipe = null;
 	var index = {
-		init:function(){//初始化方法
+		init:function(){//初始化方法is
+			self = this;
+			self.getActivityList();
 			var startSlide = 0;
 			var swipeLength = 0;//有多少个要轮播的元素
 			var $position = $("#position");
@@ -48,6 +51,30 @@
 					$moreContent.hide();
 				}
 			});
+		},
+		/**
+		 * 得到最新活动的列表
+		 * @return {[type]} [description]
+		 */
+		getActivityList:function(){
+			console.log("2");
+			$.ajax({
+				url:"/BaiingBusinessEngine/rest/knowledge/search",
+				dataType: "json",
+				type: 'post',
+				contentType:"application/json",
+				data:JSON.stringify({
+					os:"ios",
+					vercode:0,
+					keyword:"优惠活动",
+					startPos:0,
+					pageSize:10,
+					scene:"deals"
+					
+				}),success:function(data){
+
+				}
+			})
 		}
 	}
 	index.init();

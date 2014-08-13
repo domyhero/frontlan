@@ -10,6 +10,7 @@
 		init:function(){
 			self = this;
 			self.bind();
+			self.getHallList();
 			this.getUserPosition();
 			
 			
@@ -82,6 +83,25 @@
 			}else{
 				alert("不支持");
 			}
+		},
+		getHallList:function(){
+			$.ajax({
+				url:"/BaiingBusinessEngine/rest/knowledge/search",
+				dataType: "json",
+				type: 'post',
+				contentType:"application/json",
+				data:JSON.stringify({
+					os:"ios",
+					vercode:0,
+					keyword:"营业厅",
+					startPos:0,
+					pageSize:10,
+					scene:"business_office"
+					
+				}),success:function(data){
+					//$newActivityList.html($("#activityTmpl").tmpl(data.body.entities));
+				}
+			})
 		},
 		/**
 		 * 取得最近的物价电信营业厅的数据

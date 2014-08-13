@@ -8,8 +8,9 @@
 #newActivityList > section header,
 .newActivity header {
   height: 2.58333333em;
-  padding-left: 1.33333333em;
-  padding-right: 0.83333333em;
+  /* padding-left: 32/24em;
+		padding-right: 20/24em; */
+  text-align: center;
   line-height: 2.58333333em;
   border-bottom: 1px solid #f0f0f0;
   -moz-box-shadow: 0px 2px 4px rgba(4, 0, 0, 0.1);
@@ -19,7 +20,7 @@
 #newActivityList > section header h2,
 .newActivity header h2 {
   display: inline-block;
-  font-size: 1.16666667em;
+  font-size: 1em;
   color: #333333;
   font-weight: normal;
 }

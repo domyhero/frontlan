@@ -10,97 +10,102 @@
 <body>
 	<div class="wrap">
 		<!--#include file="common/header.html" -->
-		<div id="youNumberMod">
-			<h1>您的号码：18511335241
-			<p>已经具备漫游资格</p>
-		</h1>
+		
+		<div id="nationWrap">
+			
 		</div>
 		
-		<div id="nationInfo">
-			法国<i id="tianqi"></i>17℃
-			<img id="star" src="css/img/star.png"/>
-			
-			<section>
-				<span>国际接入码：011 </span>
-				<span>频率：900、1800</span>
-			</section>
-			
-			<p>运营商：Bouygues/Orange/SFR</p>
-			<div id="feeMod">
-				<h2>新天翼国际卡资费：</h2>
-				<span>查看旧天翼国际卡资费</span>
-			</div>
-			
-		</div>
-		<section id="tableMod">
-			<table id="callTable">
-				<tbody>
-					<tr>
-					<th class="short" rowspan="4">打电话</th>
-					<td class="short subTitle" rowspan="4">主叫</td>
-					<td>拨打本地电话</td>
-					<td>2.99元/分钟</td>
-					
-				</tr>
-				<tr>
-					<td>拨打回大陆地区</td>
-					<td>4.99元/分钟</td>
-				</tr>
-				<tr>
-					
-					
-					<td>拨打其他国家和地区</td>
-					<td>4.99元/分钟</td>
-					
-				</tr>
-				<tr>
-					<td>被叫</td>
-					
-					
-					<td>2.99元/分钟</td>
-				</tr>
-				</tbody>
-				
-			</table>
-			<table id="sendMessageMod">
-				<tr>
-					<th class="short" rowspan="3">发短信</th>
-					<td class="twoCol">发送短信至中国大陆</td>
-					<td>0.49元/条</td>
-					
-				</tr>
-				<tr>
-					
-					<td class="twoCol">发送短信至其他国家和地区</td>
-					<td>1.10元/条</td>
-					
-				</tr>
-				<tr>
-					
-					<td>接收</td>
-					<td>免费</td>
-				</tr>
-			</table>
-			<table>
-				<tr>
-					<th class="short" rowspan="2">数据业务</th>
-					<td>CDMA 1X</td>
-					<td>不支持</td>
-					
-				</tr>
-				<tr>
-					<td>GPRS</td>
-					<td>0.01/KB</td>
-					
-				</tr>
-			</table>
-			<ul id="feeTip">
-				<li>(1)计费原则：双向计费</li>
-				<li>(2)计费货币单位：人民币（元）</li>
-				<li>(3)计费单元：语音服务按分钟计费，不足1分钟按1分钟
-    计，短信按条数计费</li>
-			</ul>
-		</section>
 	</div>
+	<script id="nationTmpl" type="text/html">
+		<div>
+			<div id="nationInfo">
+				${$data.country}
+				<img id="tianqi" src="${$data.weather.icon}" alt="天气"/>
+				${parseInt($data.weather.temp)}℃
+				
+				
+				
+				<div id="feeMod">
+					<h2>${$data.cardType}资费：</h2>
+					<span>查看旧天翼国际卡资费</span>
+				</div>
+				
+			</div>
+			<section id="tableMod">
+				<table id="callTable">
+					<tbody>
+						<tr>
+						<th class="short" rowspan="4">打电话</th>
+						<td class="short subTitle" rowspan="4">主叫</td>
+						<td>拨打本地电话</td>
+						<td>2.99元/分钟</td>
+						
+					</tr>
+					<tr>
+						<td>拨打回大陆地区</td>
+						<td>4.99元/分钟</td>
+					</tr>
+					<tr>
+						
+						
+						<td>拨打其他国家和地区</td>
+						<td>4.99元/分钟</td>
+						
+					</tr>
+					<tr>
+						<td>被叫</td>
+						
+						
+						<td>2.99元/分钟</td>
+					</tr>
+					</tbody>
+					
+				</table>
+				<table id="sendMessageMod">
+					<tr>
+						<th class="short" rowspan="3">发短信</th>
+						<td class="twoCol">发送短信至中国大陆</td>
+						<td>0.49元/条</td>
+						
+					</tr>
+					<tr>
+						
+						<td class="twoCol">发送短信至其他国家和地区</td>
+						<td>1.10元/条</td>
+						
+					</tr>
+					<tr>
+						
+						<td>接收</td>
+						<td>免费</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<th class="short" rowspan="2">数据业务</th>
+						<td>CDMA 1X</td>
+						<td>不支持</td>
+						
+					</tr>
+					<tr>
+						<td>GPRS</td>
+						<td>0.01/KB</td>
+						
+					</tr>
+				</table>
+				<ul id="feeTip">
+					<li>(1)计费原则：双向计费</li>
+					<li>(2)计费货币单位：人民币（元）</li>
+					<li>(3)计费单元：语音服务按分钟计费，不足1分钟按1分钟
+	    		计，短信按条数计费</li>
+				</ul>
+			</section>
+		</div>
+	</script>
+	<script src="js/jQuery.js"></script>
+	<script src="js/jQuery.tmpl.js"></script>
+	<script src="js/units.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/abroadServiceDetail.js"></script>
 </body>
 </html>

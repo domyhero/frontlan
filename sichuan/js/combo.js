@@ -2,6 +2,7 @@
 	var self = null;
 	var $distList = $("#distList");
 	var $filterMod = $("#filterMod");
+	var $comboList = $("#comboList"); //套餐列表
 	var $comboTypeList = $("#comboTypeList");
 	var $feeList = $("#feeList");
 	var phonePriceList = ["0-9","20-49","50-99","100-299","300及以上"];
@@ -9,7 +10,10 @@
 	var priceList = [];
 	var combo = {
 		init:function(){
+			//alert("appVersion里能获取系统和版本号吗?"+navigator.appVersion);
+			//for(var a in navigator){alert(a+"的值"+navigator[a])}
 			self = this;
+			self.getComboList();
 			self.bind(); 
 		},bind:function(){
 			priceList = phonePriceList;
@@ -27,8 +31,9 @@
 				$(this).addClass('active');
 				$(this).siblings().removeClass('active');
 			})*/
+			//用户筛选套餐类型
 			$("#comboTypeList").on("click","li",function(event) {
-				$(this).toggleClass('active');
+				$(this).toggleClass('acgnqtive');
 				var network = false,phone = false,itv=false,tel = false;
 				
 				var $activeList = $comboTypeList.children('.active');
@@ -84,6 +89,37 @@
 			/*$distList.on("click","li",function(){
 				$(this).addClass('active');
 				$(this).siblings().removeClass('active');
+			})*/
+		},
+		/**
+		 * 根据用户的筛选条件获取具体套餐信息的列表
+		 */
+		getComboList:function(){
+			$.ajax({
+				url:"/BaiingBusinessEngine/rest/knowledge/search",
+				dataType: "json",
+				type: 'post',
+				data:JSON.stringify({
+					os:"ios",
+					vercode:0,
+					keyword:"套餐",
+					startPos:0,
+					pageSize:10,
+					scene:"bundle"
+					
+				}),success:function(data){
+					$comboList.html($("#comboTmpl").tmpl([{},{},{}]));
+				}
+			})
+			/*$.ajax({
+				url:sichuan.host+"bundle",
+				data:{
+					series:["乐享3G上网版"],
+					bundleType:["broadband"],
+					packPay:["100以下"]
+				},success:function(data){
+
+				}
 			})*/
 		}
 		

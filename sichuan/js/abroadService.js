@@ -1,11 +1,19 @@
 (function(){
 	var self = null;
+	var keyword = "international_roaming_fee";
+	var nationName = "";
+	var roamingType = ""; //漫游方式
 	var $nationSelectList = $("#nationSelectList");
 	var $nationMap = $("#nationMap");
 	var $continentList = $("#continentList");
+	var $confirmCardlist = $("#confirmCardlist");//这个国家有哪些卡list
+	var $roamList = $("#roamList");//漫游方式list
 	var abroadService = {
 		init:function(){
+
 			self =  this;
+			//self.getHotNation();
+			
 			self.getNationList({
 				continentName:"热门"
 			});
@@ -16,7 +24,11 @@
 				
 			})
 			$("#nationSelectList").on("click","li",function(){
-				$(this).addClass('active').siblings().removeClass('active');
+				if(!$(this).hasClass('active')){
+					$(this).addClass('active').siblings().removeClass('active');
+					self.getNationData();
+				}
+				
 			})
 			$continentList.on("click","span",function(){
 				
@@ -43,7 +55,7 @@
 				
 			})
 			$nationSelectList.on("click","li",function(){
-				location.assign("abroadServiceDetail.html");
+				//location.assign("abroadServiceDetail.html");
 			})
 			$("#confirmCardlist").on("click","li",function(){
 				$(this).addClass('active').siblings().removeClass('active');
@@ -56,7 +68,10 @@
 				$("#validateCardModal").modal("show");
 			});
 			$("#searchAbroadCard").click(function(event) {
-				alert("查询");
+				roamingType = $roamList.children('li:first').html();
+				cardType = $confirmCardlist.children('li:first').html();
+
+				location.assign("abroadServiceDetail.html?nationName="+nationName+"&roamingType="+roamingType+"&cardType="+cardType+"");
 			});
 			$nationMap.find("i").click(function(event) {
 
@@ -66,9 +81,23 @@
 				$continentList.find('.'+name+'').click();
 			});
 		},
+		getHotNation:function(){
+			$.ajax({
+				url:"/routeServer/rest/base/getCountryByContinent",
+				dataType: "json",
+				type: 'post',
+				contentType:"application/json",
+				data:JSON.stringify({
+					os:"ios",
+					vercode:0
+					
+				}),success:function(data){
+					
+				}
+			})
+		},
 		/**
 		 * 得到一个洲的国家列表
-		 * @return {[type]} [description]
 		 */
 		getNationList:function(paramData){
 			
@@ -81,6 +110,30 @@
 				}
 			}
 			$nationSelectList.children('li:first').addClass('active');
+			self.getNationData();
+		},
+		/**
+		 * 得到一个国家的漫游方式等等
+		 */
+		getNationData:function(){
+			nationName = $nationSelectList.children('li.active').html();
+			
+			$.ajax({
+				url:"/BaiingBusinessEngine/rest/knowledge/getRoamCardByCountry",
+				dataType: "json",
+				type: 'post',
+				contentType:"application/json",
+				data:JSON.stringify({
+					country:nationName
+					
+				}),success:function(data){
+					
+					//$newActivityList.html($("#activityTmpl").tmpl(data.body.entities));
+					$confirmCardlist.html($("#cardTmpl").tmpl(data.body.cards)).children('li:first').addClass('active');
+					$roamList.html($("#roamTmpl").tmpl(data.body.roams)).children('li:first').addClass('active');
+				}
+			})
+			
 		}
 	}
 	abroadService.init();

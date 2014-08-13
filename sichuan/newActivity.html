@@ -53,7 +53,15 @@
 			</div><!-- /.modal -->
 			<!-- end -->
 		</div>
-
+		<script id="activityTmpl" type="text/html">
+			<section data-id="${$data.kid}" class="shareObj">
+				<header>
+					<h2>${$data.name}</h2>
+					<div class="share"><i></i><span>分享</span></div>
+				</header>
+				<a href="newActivityDetail.html?kid=${$data.kid}"><img src="images/activity1.jpg" /></a>
+			</section>
+		</script>
 		<script src="js/jQuery.js"></script>
 		<script src="js/jQuery.tmpl.js"></script>
 		<script src="js/bootstrap.js"></script>

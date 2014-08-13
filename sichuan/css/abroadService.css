@@ -154,6 +154,9 @@
   width: 7.625em;
   height: 4.95833333em;
 }
+#validateCardModal .close {
+  border: none;
+}
 #validateCardModal .modal-body {
   color: #555;
 }

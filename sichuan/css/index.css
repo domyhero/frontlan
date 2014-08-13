@@ -123,6 +123,7 @@
 #selectNumList > li > span {
   display: block;
   font-size: 1.33333333em;
+  text-align: center;
 }
 #selectNumList .longCol {
   width: 8.41666667em;
