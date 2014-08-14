@@ -17,26 +17,23 @@
 		</ul>
 		<h1>如何充值?</h1>
 		<ul id="questionList">
-			<li>
-				
-				<p>
-					回答：你可以通过网厅、手机APP或者到附近的网厅
-进行办理，不过优惠力度不一样哦。
-				</p>
-				<footer>4.20</footer>
-				
-			</li>
-			<li>
-				
-				<p>
-					回答：你可以通过网厅、手机APP或者到附近的网厅
-进行办理，不过优惠力度不一样哦。
-				</p>
-				<footer>4.20</footer>
-			</li>
+			
 		</ul>
 	</div>
+	<script id="answerTmpl" type="text/html">
+		<li>
+			<p>
+				回答：你可以通过网厅、手机APP或者到附近的网厅
+				进行办理，不过优惠力度不一样哦。
+			</p>
+			<footer>${$data.date}</footer>
+			
+		</li>
+	</script>
 	<script src="js/jQuery.js"></script>
+	<script src="js/jQuery.tmpl.js"></script>
+	<script src="js/units.js"></script>
+	<script src="js/common.js"></script>
 	<script src="js/faq.js"></script>
 </body>
 </html>

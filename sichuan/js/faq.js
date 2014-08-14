@@ -7,7 +7,7 @@
 			self = this;
 			kid = units.getSearchValue("kid");
 			if(kid){
-				
+				self.getFaqDetai();
 			}else{
 				self.getFaqList();
 			}
@@ -18,7 +18,8 @@
 				$(this).find("i").toggleClass('down');
 			});
 			$questionList.on("click",".rightArrow",function(){
-				location.assign("faqDetail.html");
+				var kid = $(this).closest('li').data("id");
+				location.assign("faqDetail.html?kid="+kid+"");
 			})
 
 		},getFaqList:function(){
@@ -34,7 +35,28 @@
 					pageSize:10
 					
 				}),success:function(data){
-					//$newActivityList.html($("#activityTmpl").tmpl(data.body.entities));
+					
+					$questionList.html($("#questionTmpl").tmpl(data.body.entities));
+				}
+			})
+		},
+		/**
+		 * 得到某一条faq的详细信息
+		 */
+		getFaqDetai:function(){
+			$.ajax({
+				url:"/BaiingBusinessEngine/rest/knowledge/detail",
+				dataType: "json",
+				type: 'post',
+				data:JSON.stringify({
+					os:"ios",
+					vercode:0,
+					kid:kid,
+					scene:"FAQ",
+					
+				}),success:function(data){
+					$questionList.html($("#answerTmpl").tmpl(data.body.entities));
+					
 				}
 			})
 		}

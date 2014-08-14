@@ -9,6 +9,7 @@
 			self.bind();
 		},bind:function(){
 			$(document).on("click",".share",function(){
+				debugger;
 				window.$shareObj = $(this).closest('.shareObj');
 				$('#shareModal').modal('show')
 			})

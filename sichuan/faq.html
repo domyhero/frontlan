@@ -15,24 +15,19 @@
 			
 		</ul>
 		<ul id="questionList">
-			<li>
-				<h2>如何充值?</h2>
-				<p>
-					回答：你可以通过网厅、手机APP或者到附近的网厅
-进行办理，不过优惠力度不一样哦。
-				</p>
-				<i class="rightArrow"></i>
-			</li>
-			<li>
-				<h2>如何充值?</h2>
-				<p>
-					回答：你可以通过网厅、手机APP或者到附近的网厅
-进行办理，不过优惠力度不一样哦。
-				</p>
-				<i class="rightArrow"></i>
-			</li>
+			
+			
 		</ul>
 	</div>
+	<script id="questionTmpl" type="text/html">
+		<li data-id="${$data.kid}">
+			<h2>${$data.question}</h2>
+			<p>
+				回答：${$data.answer}
+			</p>
+			<i class="rightArrow"></i>
+		</li>
+	</script>
 	<script src="js/jQuery.js"></script>
 	<script src="js/jQuery.tmpl.js"></script>
 	<script src="js/units.js"></script>
