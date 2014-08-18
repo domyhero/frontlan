@@ -1,15 +1,13 @@
 (function(){
 	var self = null;
 	var common = {
-		host:"http://118.194.212.98:7446/BaiingBusinessEngine/rest/knowledge/",
-		
 		init:function(){
 			self = this;
 			self.ajaxCommonRequest();
 			self.bind();
 		},bind:function(){
 			$(document).on("click",".share",function(){
-				debugger;
+				
 				window.$shareObj = $(this).closest('.shareObj');
 				$('#shareModal').modal('show')
 			})
@@ -35,17 +33,19 @@
 		 * 每个ajax请求都必须有这些设置,所以在这里统一设置
 		 */
 		ajaxCommonRequest:function(){
-			console.log("1");
+
 			$.ajaxSetup({
 				//cache:false,
 				
 				dataType:"json",
 				contentType:"application/json",
-				method:"POST",
+				method:"post",
 				data:JSON.stringify({
 					os:"ios",
 					vercode:0
-				})
+				}),beforeSend:function(){
+					console.log("beforeSend");
+				}
 			})
 		},
 		shareTSina:function(title,rLink,site,pic){

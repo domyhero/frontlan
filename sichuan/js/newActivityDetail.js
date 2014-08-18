@@ -22,10 +22,23 @@
 					kid:kid
 					
 				}),success:function(data){
+					
+					var sedate = data.body.sedate;
+					sedate = sedate.split("，");
+					if(sedate.length==1){
+						sedate = sedate.toString().split(" ");
+						sedate[1] = "-";
+					}else{
+						sedate[1] = sedate[1].slice(1);
+					}
+					sedate[0] = sedate[0].slice(1,-1);
+					
+					data.body.sedate = sedate;
 					$("#wrapContent").html($("#activityDetailTmpl").tmpl(data.body));
 					
 				}
 			})
+
 		}
 	}
 	newActivity.init();

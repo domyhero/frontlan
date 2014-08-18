@@ -120,12 +120,8 @@
 			
 			$.ajax({
 				url:"/BaiingBusinessEngine/rest/knowledge/getRoamCardByCountry",
-				dataType: "json",
-				type: 'post',
-				contentType:"application/json",
 				data:JSON.stringify({
 					country:nationName
-					
 				}),success:function(data){
 					
 					//$newActivityList.html($("#activityTmpl").tmpl(data.body.entities));

@@ -61,13 +61,13 @@
 	</div>
 
 	<script id="hallTmpl" type="text/html">
-		<li data-lng="${point.lng}" data-lat="${point.lat}">
-			<h3>${title}</h3>
-			<p>${address} </p>
-			<p>营业时间：AM 9:00 - PM 18:00</p>
+		<li data-lng="${$data.longitude}" data-lat="${$data.latitude}">
+			<h3>${$data.name}</h3>
+			<p>${$data.address} </p>
+			<p>营业时间：${$data.time}</p>
 			<footer>
-				<span class="goTo" {{if !phoneNumber}}style="border-right:none;"{{/if}}><i></i>到这去</span>
-				<span class="call">{{if phoneNumber}}<i></i><a href="tel://${phoneNumber}">电话</a>{{/if}}
+				<span class="goTo" {{if !$data.telephone}}style="border-right:none;"{{/if}}><i></i>到这去</span>
+				<span class="call">{{if $data.telephone}}<i></i><a href="tel://${$data.telephone}">电话</a>{{/if}}
 				</span>
 			</footer>
 		</li>

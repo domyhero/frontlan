@@ -13,8 +13,9 @@
 		<!--#include file="common/header.html" -->
 		<div id="filterMod">
 			<h2>套餐:</h2>
+
 			<ul id="comboTypeList" class="itemList">
-				<li class="network active">宽带<i></i></li><li class="phone">手机<i></i></li><li class="itv">ITV<i></i></li><li class="tel">固话<i></i></li>
+				<!-- <li class="network active">宽带<i></i></li><li class="phone">手机<i></i></li><li class="itv">ITV<i></i></li><li class="tel">固话<i></i></li> -->
 			</ul>
 			<h2 >资费：(元)</h2>
 			<ul id="feeList" class="itemList">
@@ -35,7 +36,7 @@
 					</ul>
 				</div>
 				
-				<span id="feeTrigger">资费<i class="doubleArrow"></i></span>
+				<span id="feeTrigger">资费<i class="doubleArrow down"></i></span>
 			</div>
 		
 		
@@ -43,16 +44,35 @@
 			
 		</ul>
 		<script id="feeTmpl" type="text/html">
-			<li>${$data}<i></i></li>
+			<li >${$data}<i></i></li>
 		</script>
 	</div>
-	<script id="comboTmpl" type="text/html">
+	<script id="comboTypeTmpl" type="text/html">
+		<li>${$data}<i></i></li>
+	</script>
+	<script id="feeTmpl" type="text/html">
 		<li>
+			${$data.packPay}<i></i>
+		</li>
+	</script>
+	<script id="distTmpl" type="text/html">
+		<li>${$data}</li>
+	</script>
+	<script id="comboTmpl" type="text/html">
+		<li data-id="${$data.id}">
 			<img src="images/comboProduct.jpg" />
 			<ul>
-				<li><h3>“卓越宽带”合约计划</h3><button >办理</button></li>
-				<li><span>说明：</span>新增50M、100M宽带单产品</li>
-				<li class="feeMod"><span>资费：</span>168元/月 1480包年</li>
+				<li><h3>${$data.name}</h3><button >办理</button></li>
+				<li><span>说明：</span>${$data.note}</li>
+				
+				<li class="feeMod"><span>资费：</span>
+				{{if $data.monthlyBaseFee}}
+					${$data.monthlyBaseFee}/月
+				{{else}}
+					-
+				{{/if}}
+
+				<span style="display:none">1480包年</span></li>
 				<li><span>优惠：</span>中兴T2369手机可选，靓号</li>
 			</ul>
 		</li>

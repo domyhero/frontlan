@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+ <script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=qCut1sNZSKTP8RoOhzEATMul&v=1.0"></script>
+<title>百度地图的导航示例</title>
+<style type="text/css">
+body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;} @media (max-device-width: 780px){#golist{display: block!important;}}#golist {display: none;}
+</style>
+</head>
+<body>
+<a id="golist" href="../demolist.htm">返回demo列表页</a>
+<div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript">
+
+
+
+/*start|end：（必选）
+{name:string,latlng:Lnglat}
+opts:
+mode：导航模式，固定为
+BMAP_MODE_TRANSIT、BMAP_MODE_DRIVING、
+BMAP_MODE_WALKING、BMAP_MODE_NAVIGATION
+分别表示公交、驾车、步行和导航，（必选）
+region：城市名或县名  当给定region时，认为起点和终点都在同一城市，除非单独给定起点或终点的城市
+origin_region/destination_region：同上
+*/
+debugger;
+	var gc = new BMap.Geocoder();
+			var ab = new BMap.Point(105.893873,32.434382);
+			debugger;
+			gc.getLocation(
+				ab,function(result){
+					debugger;
+					var ass = 3;
+					
+				}
+			);
+	var start = {
+	     name:"绵阳科创园区奥林春天"
+	}
+	var end = {
+	    name:"云台营业厅"
+	}
+	var opts = {
+	    mode:BMAP_MODE_DRIVING
+	}
+	var ss = new BMap.RouteSearch();
+	ss.routeCall(start,end,opts);
+
+</script>

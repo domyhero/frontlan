@@ -333,6 +333,7 @@ i {
   float: left;
   width: 8em;
   height: 6.08333333em;
+  margin-top: 0.8em;
   vertical-align: middle;
 }
 #comboList > li ul,
@@ -370,7 +371,7 @@ i {
 #comboList > li ul h3,
 .comboMod ul h3 {
   width: 12.91666667em;
-  height: 1.58333333em;
+  padding-right: 2.2em;
   overflow: hidden;
   font-size: 1.25em;
   color: #333;

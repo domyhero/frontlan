@@ -18,8 +18,6 @@
 		},getNationInfo:function(){
 			$.ajax({
 				url:"/BaiingBusinessEngine/rest/knowledge/search",
-				dataType: "json",
-				type: 'post',
 				data:JSON.stringify({
 					os:"ios",
 					vercode:0,
@@ -36,7 +34,16 @@
 					
 					
 				}),success:function(data){
+					
+					var charge = data.body.entities[0].charge;
+					
+					//debugger;
+					data.body.entities[0].charge.call = charge.call.split("  ");
+					data.body.entities[0].charge.sms = charge.sms.split("  ");
+					data.body.entities[0].charge.net = charge.net.split("  ");
 					$("#nationWrap").html($("#nationTmpl").tmpl(data.body.entities[0]));
+					$("#callTable").html($("#callTmpl").tmpl(charge));
+					$("#sendMessageMod").html($("#smsTmpl").tmpl(charge));
 					
 				}
 			})

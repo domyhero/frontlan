@@ -10,7 +10,7 @@
 		init:function(){
 			self = this;
 			self.bind();
-			self.getHallList();
+			//self.getHallList();
 			this.getUserPosition();
 			
 			
@@ -37,7 +37,11 @@
 				var $li = $(this).closest('li');
 				var lng = $li.data("lng");
 				var lat = $li.data("lat");
-				
+				/*self.getHallList({
+					longitude:lng,
+					latitude:lat
+				})*/
+				alert("lng"+lng+"lat"+lat);
 				self.getRoute({
 					lng:lng,
 					lat:lat
@@ -58,7 +62,21 @@
 		 * 得到用户当前的地理位置(经纬度)
 		 */
 		getUserPosition:function(){
+
+			/*var longitude = 107.204822;//经度
+					var latitude = 31.604321;//纬度
+			self.getHallList({
+				longitude:longitude,
+				latitude:latitude
+			});
 			
+			self.position = {
+				coords:{
+					longitude:longitude,
+					latitude:latitude
+				}
+			};*/
+					
 			if(navigator.geolocation){
 				// alert("支持");
 				$loadingTip.show();
@@ -71,9 +89,9 @@
 					var timestamp = position.timestamp;
 					
 					
-					self.getHallData({
-						x:longitude,
-						y:latitude
+					self.getHallList({
+						longitude:longitude,
+						latitude:latitude
 					});
 					$loadingTip.hide();
 				},function(error){
@@ -81,25 +99,48 @@
 					$("#notGeolaction").show();
 				});
 			}else{
-				alert("不支持");
+				alert("当前浏览器不支持地理定位");
 			}
 		},
-		getHallList:function(){
+		getSort:function(){
+			var tmp ={};
+			var tmpval = [];
+			var tmpdata ={}
+			$.each(wafData, function(index, val) {
+			    tmp[val] =index;
+			    tmpval.push(val)
+			});
+			tmpval.sort(function(a,b){
+			    return a>b?1:-1;
+			});
+			$.each(tmpval, function(index, val) {
+			    tmpdata[tmp[val]]=val;
+			});
+		},
+		getHallList:function(paramData){
+			alert("经度"+paramData.longitude+"纬度"+paramData.latitude);
 			$.ajax({
 				url:"/BaiingBusinessEngine/rest/knowledge/search",
-				dataType: "json",
-				type: 'post',
-				contentType:"application/json",
 				data:JSON.stringify({
 					os:"ios",
 					vercode:0,
 					keyword:"营业厅",
 					startPos:0,
-					pageSize:10,
-					scene:"business_office"
+					pageSize:5,
+					scene:"business_office",
+					longitude:paramData.longitude,
+					latitude:paramData.latitude
 					
 				}),success:function(data){
-					//$newActivityList.html($("#activityTmpl").tmpl(data.body.entities));
+					var entities = data.body.entities;
+					
+					//alert("数据长度"+data.body.entities.length);
+					
+					
+					
+
+					$hallList.html($("#hallTmpl").tmpl(data.body.entities));   
+					
 				}
 			})
 		},
@@ -138,7 +179,7 @@
 			          }    
 			      }    
 			 };
-			 //debugger;    
+			  
 			var local = new BMap.LocalSearch(map,
 				options);
 			local.searchNearby("电信营业厅", new BMap.Point(paramData.x, paramData.y));
@@ -149,19 +190,33 @@
 		 * 展示当前地理位置到点击的某个营业厅的路线
 		 */
 		getRoute:function(paramData){
-			/*alert("start:lng: "+self.position.coords.longitude+"lat: "+self.position.coords.latitude);
-			alert("end:lng: "+paramData.lng+"lat: "+paramData.lat);*/
+			
 			var start = {
 	     		latlng:new BMap.Point(self.position.coords.longitude,self.position.coords.latitude)
 			}
 			var end = {
 			   latlng:new BMap.Point(paramData.lng,paramData.lat)
 			}
-			var opts = {
+			/*var opts = {
 			    mode:BMAP_MODE_TRANSIT,
 			    region:self.city
+			}*/
+			var opts = {
+			    mode:BMAP_MODE_DRIVING//BMAP_MODE_TRANSIT
 			}
 			var route = new BMap.RouteSearch();
+			var gc = new BMap.Geocoder();
+			var ab = new BMap.Point(self.position.coords.longitude,self.position.coords.latitude);
+			debugger;
+			gc.getLocation(
+				ab,function(result){
+					var ass = 3;
+					debugger;
+				}
+			);
+			alert("start:log"+self.position.coords.longitude+"lat"+self.position.coords.latitude);
+			alert("end:lng"+paramData.lng+"lat"+paramData.lat);
+			alert("opts"+opts.mode+"-"+opts.region);
 			route.routeCall(start,end,opts);
 		}
 	}
